@@ -17,6 +17,10 @@ public class ProductPage extends BasePage{
     @FindBy(xpath = "(//div[@class='product-code'])[2]")
     public WebElement productCode;
 
+    /**
+     * We need to select size to be able to add product to cart.
+     * So this method will select available size and add product to cart
+     */
     public void addToCartAfterSizeSelection(){
         WebElement sizeOptions;
         try {

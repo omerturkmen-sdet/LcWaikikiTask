@@ -19,6 +19,11 @@ public abstract class BasePage {
     @FindBy(className = "main-header-logo")
     public WebElement homePageLink;
 
+    /**
+     * It will navigate to sub-category from the panel(module) on the top of website
+     * @param categoryName
+     * @param subCategoryName
+     */
     public void navigateToSubCategory(String categoryName, String subCategoryName){
 
         WebElement categoryLink = Driver.get().findElement(By.linkText(categoryName));
@@ -27,7 +32,6 @@ public abstract class BasePage {
         WebElement subCategoryLink = Driver.get().findElement(By.linkText(subCategoryName));
         BrowserUtils.waitForVisibility(subCategoryLink,5);
         subCategoryLink.click();
-
     }
 
 }

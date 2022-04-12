@@ -16,10 +16,15 @@ public class SubCategoryPage extends BasePage{
     @FindBy(tagName = "h5")
     public List<WebElement> productsList;
 
+    /**
+     * This method will select any product from product page.
+     * With this way we can test random products to make sure about application stability
+     * Also it will return product title, so we can use that title to make assertion in product page
+     * @return
+     */
     public String clickAnyProduct(){
         WebElement selectedProduct = BrowserUtils.selectRandomFromList(productsList);
         String productTitle = selectedProduct.getText();
-//        BrowserUtils.scrollToElement(selectedProduct);
         new WebDriverWait(Driver.get(), Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(selectedProduct));
         selectedProduct.click();
         return productTitle;

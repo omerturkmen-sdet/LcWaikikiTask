@@ -15,6 +15,11 @@ public class CartPage extends BasePage{
         return BrowserUtils.getElementsText(productCodeList);
     }
 
+    /**
+     * It will check the product codes from both product page and the cart
+     * @param productCode
+     * @return
+     */
     public boolean isProductAdded(String productCode){
         boolean flag = false;
         for (String code : getProductCodes()) {
