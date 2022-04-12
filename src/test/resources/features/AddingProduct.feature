@@ -5,7 +5,7 @@ Feature: Product Adding Feature
     Given user on the LC WAIKIKI page
     Then title should contain "LC Waikiki"
     When user select any "<sub-category>" from "<category>"
-    Then title should contain "<category> <sub-category>"
+    Then title should contain "<sub-category>"
     And user click any product
     Then user should land on product page
     And user add product to cart
@@ -16,4 +16,8 @@ Feature: Product Adding Feature
     Examples:
       | sub-category | category |
       | Tişört       | ERKEK    |
+      | Gömlek       | ERKEK    |
+      | Elbise       | KADIN    |
+      | Tunik        | KADIN    |
+
 

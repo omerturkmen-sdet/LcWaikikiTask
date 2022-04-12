@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import pages.CartPage;
 import pages.HomePage;
 import pages.ProductPage;
@@ -27,8 +28,8 @@ public class AddingProductStepDefs {
 
     @Then("title should contain {string}")
     public void titleShouldContain(String partOfTitle) {
-        partOfTitle = partOfTitle.toLowerCase();
-        assertTrue(Driver.get().getTitle().toLowerCase().contains(partOfTitle));
+        BrowserUtils.wait(1);
+        assertTrue(Driver.get().getTitle().contains(partOfTitle));
     }
 
     @When("user select any {string} from {string}")
@@ -38,6 +39,7 @@ public class AddingProductStepDefs {
 
     @Then("user click any product")
     public void user_click_any_product() {
+        BrowserUtils.wait(2);
         SubCategoryPage subCategoryPage = new SubCategoryPage();
         selectedProductTitle = subCategoryPage.clickAnyProduct();
     }
